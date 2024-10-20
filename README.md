@@ -6,8 +6,7 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 - Accepts input in Malayalam language for movie reviews.
 - Predicts the sentiment as Positive or Negative.
 - Alerts the user to write in Malayalam if the input is in any other language.
-- Includes a user-friendly interface with Bootstrap and loading spinner animations.
-
+- Includes a user-friendly interface with Bootstrap.
 ## Technologies Used
 - **Backend**: Python, Flask
 - **Machine Learning**: Support Vector Machine (SVM), TF-IDF Vectorization
