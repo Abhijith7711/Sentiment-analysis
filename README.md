@@ -26,3 +26,23 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 ```bash
 git clone https://github.com/Abhijith7711/Sentiment-analysis.git
 cd Sentiment-analysis
+
+### 2. Create and Activate a Virtual Environment
+
+- Create a virtual environment using Python's `venv` module.
+- Activate the environment:
+  - Windows: Use the `venv\Scripts\activate` command.
+  - macOS/Linux: Use `source venv/bin/activate`.
+
+### 3. Install Dependencies
+
+- Install the required packages from the `requirements.txt` file using `pip`.
+
+### 4. Download Pre-trained Models
+
+- Download the `tfidf_vectorizer.pkl` and `best_svm_model.pkl` files.
+- Place them in the root directory of the project.
+
+### 5. Run the Application
+
+- Start the Flask application and access it via `http://127.0.0.1:5000/` in your browser.
