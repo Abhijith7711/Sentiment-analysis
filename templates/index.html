@@ -4,21 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malayalam Movie Sentiment Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/static/bg.png"); /* Update with your image path */
+            background-size: cover; /* Ensures the background covers the entire viewport */
+            opacity: 0.5; /* Adjust the opacity here (0.0 to 1.0) */
+            z-index: -1; /* Ensures background stays behind the content */
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+            padding: 30px; /* Increased padding for a better look */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 1; /* Brings the container above the background */
+            animation: fadeIn 1s ease-in-out; /* Optional: Simple fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-weight: 600; /* Slightly bolder font */
+        }
+
+        textarea {
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result h2 {
+            color: #333;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <h1>Malayalam Movie Review Sentiment Analysis</h1>
         <form action="/predict" method="post">
-            <textarea name="review" placeholder="Enter the Malayalam movie review here..." required>{{ review_text if review_text else '' }}</textarea>
-            <button type="submit">Predict Sentiment</button>
+            <div class="form-group">
+                <textarea name="review" class="form-control" placeholder="Enter the Malayalam movie review here..." required>{{ review_text if review_text else '' }}</textarea>
+            </div>
+            <div id="loading" class="spinner-border text-primary d-none" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            
+            <!-- Display error message if present -->
+            {% if error_message %}
+                <div class="error-message">{{ error_message }}</div>
+            {% endif %}
+            
+            <button type="submit" class="btn btn-success btn-block">Predict Sentiment</button>
         </form>
         
+        <!-- Display prediction result -->
         {% if prediction %}
         <div class="result">
             <h2>Predicted Sentiment: {{ prediction }}</h2>
         </div>
         {% endif %}
     </div>
+<!-- Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ error_message }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Show modal if error_message exists -->
+{% if error_message %}
+<script>
+    $(document).ready(function() {
+        $('#errorModal').modal('show');
+    });
+</script>
+{% endif %}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
