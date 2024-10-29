@@ -33,14 +33,14 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
   - Windows: Use the `venv\Scripts\activate` command.
   - macOS/Linux: Use `source venv/bin/activate`.
 
-### 3. Install Dependencies**
+### 3. Install Dependencies
 
 - Install the required packages from the `requirements.txt` file using `pip`.
-### 4. Download Pre-trained Models**
+### 4. Download Pre-trained Models
 
 - Download the `tfidf_vectorizer.pkl` and `best_svm_model.pkl` files.
 - Place them in the root directory of the project.
 **
-### 5. Run the Application**
+### 5. Run the Application
 
 - Start the Flask application and access it via `http://127.0.0.1:5000/` in your browser.
