@@ -24,11 +24,10 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 
 ### 1. Clone the Repository
 
-git clone https://github.com/Abhijith7711/Sentiment-analysis.git
-cd Sentiment-analysis
+
 
 **### 2. Create and Activate a Virtual Environment
-**
+
 - Create a virtual environment using Python's `venv` module.
 - Activate the environment:
   - Windows: Use the `venv\Scripts\activate` command.
