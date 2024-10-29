@@ -26,17 +26,16 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 
 
 
-**### 2. Create and Activate a Virtual Environment
+### 2. Create and Activate a Virtual Environment
 
 - Create a virtual environment using Python's `venv` module.
 - Activate the environment:
   - Windows: Use the `venv\Scripts\activate` command.
   - macOS/Linux: Use `source venv/bin/activate`.
 
-**### 3. Install Dependencies**
+### 3. Install Dependencies**
 
 - Install the required packages from the `requirements.txt` file using `pip`.
-**
 ### 4. Download Pre-trained Models**
 
 - Download the `tfidf_vectorizer.pkl` and `best_svm_model.pkl` files.
