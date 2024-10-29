@@ -40,7 +40,7 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 
 - Download the `tfidf_vectorizer.pkl` and `best_svm_model.pkl` files.
 - Place them in the root directory of the project.
-**
+
 ### 5. Run the Application
 
 - Start the Flask application and access it via `http://127.0.0.1:5000/` in your browser.
