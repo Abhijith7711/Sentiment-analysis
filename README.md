@@ -23,7 +23,7 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 ## Setup Instructions
 
 ### 1. Clone the Repository
-```bash
+
 git clone https://github.com/Abhijith7711/Sentiment-analysis.git
 cd Sentiment-analysis
 
