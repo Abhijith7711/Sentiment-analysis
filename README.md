@@ -1,12 +1,11 @@
 # Malayalam Movie Review Sentiment Analysis 🎬
 
-This is a Flask web application that performs sentiment analysis on Malayalam movie reviews. The system predicts whether a given movie review is **positive** or **negative** based on the text provided by the user. The project uses machine learning models and text vectorization techniques to make predictions.
+This is a Flask web application that performs sentiment analysis on Malayalam movie reviews. The system predicts whether a given movie review is **positive** or **negative** based on the text provided by the user. The System Works on Suppor Vector Machine.
 
 ## Features
 - Accepts input in Malayalam language for movie reviews.
 - Predicts the sentiment as Positive or Negative.
-- Alerts the user to write in Malayalam if the input is in any other language.
-- Includes a user-friendly interface with Bootstrap.
+- Includes a user-friendly interface.
 ## Technologies Used
 - **Backend**: Python, Flask
 - **Machine Learning**: Support Vector Machine (SVM), TF-IDF Vectorization
@@ -24,8 +23,6 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
 
 ### 1. Clone the Repository
 
-
-
 ### 2. Create and Activate a Virtual Environment
 
 - Create a virtual environment using Python's `venv` module.
@@ -33,10 +30,7 @@ This is a Flask web application that performs sentiment analysis on Malayalam mo
   - Windows: Use the `venv\Scripts\activate` command.
   - macOS/Linux: Use `source venv/bin/activate`.
 
-### 3. Install Dependencies
-
-- Install the required packages from the `requirements.txt` file using `pip`.
-### 4. Download Pre-trained Models
+### 3. Download Pre-trained Models
 
 - Download the `tfidf_vectorizer.pkl` and `best_svm_model.pkl` files.
 - Place them in the root directory of the project.
